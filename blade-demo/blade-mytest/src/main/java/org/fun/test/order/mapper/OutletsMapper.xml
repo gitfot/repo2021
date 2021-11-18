@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.fun.test.order.mapper.OutletsMapper">
+
+    <select id="getAllOutLetAddress" resultType="java.util.Map">
+        SELECT
+            md.MAINDISTRICT_NAME AS code1,
+            case  #{lang,jdbcType=VARCHAR}
+                when 'E' then MAINDISTRICTNAME_ISO
+                when 'T' then MAINDISTRICTNAME_BIG5
+                when 'S' then MAINDISTRICTNAME_SC
+                else MAINDISTRICTNAME_ISO
+                END AS label1,
+
+            od.District_Name AS code2,
+            case #{lang,jdbcType=VARCHAR}
+                when 'E' then DistrictName_ISO
+                when 'T' then DistrictName_BIG5
+                when 'S' then DistrictName_SC
+                else DistrictName_ISO
+                END AS label2,
+
+            o.SHOP_ID AS code3,
+            case #{lang,jdbcType=VARCHAR}
+                when 'E' then OUTLETADDRESS_ISO
+                when 'T' then OUTLETADDRESS_BIG5
+                when 'S' then OUTLETADDRESS_SC
+                else OUTLETADDRESS_ISO
+                END AS label3
+
+        FROM
+            `outlet_main_districts` md
+                LEFT JOIN outlet_districts od ON od.Maindistrict_Name = md.MAINDISTRICT_NAME
+                LEFT JOIN outlets o ON o.DISTRICT_NAME = od.District_Name
+                LEFT JOIN miap_product_stock_for_share ps on ps.shop_id = o.SHOP_ID
+
+        where ps.product_code =  #{productCode,jdbcType=VARCHAR}
+          AND  ps.stock_level >= #{count,jdbcType=INTEGER}
+          AND  o.show_on_1cm = 'Y'
+
+        <if test="shopIdList != null">
+            and ps.shop_id in
+            <foreach collection="shopIdList" open="(" close=")" separator="," item="shopId">
+                #{shopId,jdbcType=VARCHAR}
+            </foreach>
+        </if>
+
+        ORDER BY label1, label2
+
+    </select>
+
+    <select id="getRetrieveMIAPProductList"
+            resultType="org.fun.test.order.entity.Product">
+        SELECT
+        ps.product_code AS prodCode,
+        ps.hs_id AS hsId,
+        CONCAT( ps.shop_id, ':', ps.stock_level ) AS outletQuantity
+        FROM
+        miap_product_stock_for_share ps
+        WHERE
+        ps.product_code = #{wareHouse.productCode}
+
+        <if test="wareHouse.warehouseCode != 'ALL'">
+            AND ps.shop_id in
+            <foreach item="item" index="index" collection="array"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+
+        AND ps.stock_level > 0
+    </select>
+</mapper>

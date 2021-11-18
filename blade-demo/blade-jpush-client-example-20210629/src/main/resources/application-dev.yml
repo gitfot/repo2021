@@ -1,0 +1,10 @@
+server:
+  port: 8001
+
+message:
+  jpush:
+    appKey: d43820a37bf1c36ed906e1d6
+    masterSecret: 8563a534912f9d5fe39fb583
+    liveTime: 1000
+    apnsProduction: false # 是否生成环境，true表示生成环境
+

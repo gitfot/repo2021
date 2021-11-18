@@ -1,0 +1,7 @@
+message:
+  aliyun-sms:
+    accessKeyId: xxx
+    accessKeySecret: xxx
+    domain: xxx
+    signName: xxx
+    templateCode: xxx

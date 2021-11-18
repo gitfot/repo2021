@@ -1,0 +1,28 @@
+pay:
+  wxpay:
+    app-id: wx9b5ca12089ea599a
+    mch-id: 1603749221
+    mch-key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+    key-path: "classpath:cert/wxpay/piclient_cert.p12"
+    privateKeyPath: "classpath:cert/wxpay/apiclient_key.pem"
+    privateCertPath: "classpath:cert/wxpay/apiclient_cert.pem"
+    apiV3Key: de35464915b94987b2ae449a9ab4d844
+    certSerialNo: 31BD4BAB6EE2756CA8A210DA9E5FD8D5B6B2986D
+    notify-url: 192.168.255.1:8080/pay/v3/notify/order
+
+  alipay:
+    app-id: 2021000117695691
+    private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCuYpf6n8YQH3Fcl6uT3kDFfBxYhX4GmTOxiWQE5XsCKHPCqt2tH9yAMa1iK4DcPNkELI2qW9xmrwqOYJCRupBgxwGIquXf8knXL56g+fd2QaTJeyRWZQ2++J0nY9gDGtKN9By4axdQMKIWWVf1Kuo6f787wxMe4Zc6zLMVqn503sK1bEnHQah34y2invy1oh34uHfHk3srcU9oR32I9jj+040ZeJWjopa06Tq5wlcQsPcAyWnKOcC2FWrjI7VTUAfMqlqHF1e8B2EHU0q+JpX+A0cxk21Bnnt4lStQwjDPAN5/OtVLWwXwO4fctOGrnYhNum6qLu1Q+j3UqTrvN09BAgMBAAECggEADFSYXnZRsO4oO93Vmf0LI2ulLXUy9hB7IUCPu/DmA78MgGVIi2dHViEtG1XsJKaAydTEp5kbOn+CBZM6ZbOFZfJsX1eGLZGaOwb49nT2VHxLxJtadGls0WYO5qweqAmLfdIW/ctEuLzXmTD0ETfZnA1QXk9q2LIm2VeECjImAulnhRIzYM1dNQliOGufxdFtqZzqApxMtsA7OYmWQU8F0YxCWEo1Enxpj7VPacV5HBLsDbOzYfohf8tYz9YRVtjVxBTX82RXJ2Ybqj/rWywMgOtG5PGUzgGGWU8wxjY0I87jf1Ym4jVAzq3MWBR/0X/rZoiXAnvbr9toxBU/ptex4QKBgQDWT8bJqnTDaTVlm2+ln1tF+FOIQfiCdlbpBIDGWPc1msW6X+uW1zIGB/6L2uRpjC2in0Sn9N9XoHHbJxca5udheZl2LqyQxtsP9PyHUKyaCp37vnwO90xVaj3DK4q33pbkL7nQsd5TRUyM8apD/QPj6aBzT6WgH5ZkxyibftC8nQKBgQDQTpHrVzUVig+aoOHEY+Ibj/8WOAaftPC/WFnliveoph8QrZZsCFo+d0g0R6u3vDJyEVFuUpAGpOUMFA8wot6d4HThrj/9ACb0WkoUPo1WYwAZKl013+ctTVhJPely3JRxg6xtbriGsoYSIJTXd5d+P2uMCIGrH4p78I3JFn/x9QKBgQCrua0ONznsw0b4Lf7edbzLalp02nfpAi5N9T/Cr9MW7vf1iZrbeYAp+Qnswu837A09O+Xlt3+nVXcmJkKLWe6Z2rgvTOMV92HdfW9Edk53+H3zFQWPcHWIE+N9mkxDXWcHXX7FTWFa1DKs1ZCbfgg5/iCFhZKvpd/6zOMrBgj4uQKBgQCexUQzPKUZZcG++iEar4cHuxmSteFWmXNmZNEgRGu//95tt+GPNk6SjhhawMYBpVBN4SVQEV31snliW2e4imtjqlFsMoRTMmp+lNMh2wufbJYGmGOzTJXH0cwZBzeIdNgwLUyfnGTJRgkqh+rq0ByH/Y7bjSBIbiH/lbp8KsoagQKBgH+87dUEqIr86NHPBAQWgZYYtxTwfVHyo19qYyeTdwUP/oEFk37mj3nmhYLsIKknCPhih7p47IWoh5YUGlNiM9jLdB03H3ZOfub047MoH+1LGs7FlxkyMEiHJ0CC+bt/JNZy3u8io5h+l9uROZlYELKXUZGBG3q4psloGhGPoxsp
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmXmHXLLwYL+8MD+PLE60YpmPS7yJQblt/cgYQnIQL2jMZ2FwVQ+HdqVMQDruXYF6A6eNwhfycPrd6UbYiDrGc/wCG0ZXIuoA4ClW1ssxrCSXvGXMJEBDK0lfNsaP5imsmi3GDybsb046GgvwRJW366Fi+bF6P/BXBr1lg8EybUmN5duFj1PL5woSdtRV6B9JKH205kym8T1uXynYXAzszKcs6Xbab9wTLC29Rgbo2pG0kZniPe7WN875EIaDRpdWPN6BZo3CAWxQRV5QNl6cvsRdo0AcZtYv9FYRSFQiTOLl0f6+8Q9eipi97C5feu+9wEQCKqJvojRuB3gP2S/N1QIDAQAB
+    #支付网关配置，注意区分沙箱环境（dev）
+    gateway: openapi.alipaydev.com
+    returnUrl: 192.168.255.1:8080/static/return
+    notifyUrl: 192.168.255.1:8080/alipay/notify_url
+    errorUrl: 192.168.255.1:8080/static/error
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://p2wan.fun:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456

@@ -1,0 +1,6 @@
+oss:
+  aliyun:
+    endpoint: oss-cn-guangzhou.aliyuncs.com
+    accessKey: LTAI5tPnAhRVD5duoxA27Jkh
+    secretKey: xw0DuxrqF47HnKJbU68Awte5Hq3pkL
+    bucketName: buk-2021

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>SpringBlade</artifactId>
+        <groupId>org.springblade</groupId>
+        <version>3.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>blade-demo</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>blade-rabbitMQ-example-20210628</module>
+        <module>blade-QrUtils-example-20210628</module>
+        <module>blade-message-example-20210628</module>
+        <module>blade-jpush-client-example-20210629</module>
+        <module>blade-payment-example-20210702</module>
+        <module>balde-unipush-service-example-20210704</module>
+        <module>blade-getui-client-example-20210711</module>
+        <module>blade-activiti-example-20210718</module>
+        <module>blade-aliyunOss-example-20210720</module>
+        <module>web-common-20210720</module>
+        <module>blade-quartz-example-20210721</module>
+        <module>blade-httpClient-exampel-20210729</module>
+        <module>blade-mytest</module>
+        <module>blade-flowable-example-20210803</module>
+        <module>blade-easyExcel-example-20210817</module>
+        <module>blade-oauth2-server-example-20210826</module>
+        <module>blade-exportfile-example-20210829</module>
+        <module>blade-sa-token-example-20210916</module>
+        <module>blade-auth2-parent-example-20210924</module>
+        <module>blade-dynamic-atasource-example-20211018</module>
+        <module>blade-flash-sale-example-20211024</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

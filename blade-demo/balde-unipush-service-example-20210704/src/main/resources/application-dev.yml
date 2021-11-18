@@ -1,0 +1,11 @@
+server:
+  port: 8001
+
+message:
+  unipush:
+    app-id: WA8ZMOYvae7boScHYws703
+    app-key: k33M3ampen88oyiD3P4JyA
+    app-secret: tVVz2IFFPvAPC57K0jMM55
+    master-secret: AvH3gzYz5mAeCOaF63AU24
+    host: http://sdk.open.api.igexin.com/apiex.htm
+

@@ -1,0 +1,51 @@
+server:
+  port: 8021
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://p2wan.fun:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+  quartz:
+    # 将任务持久化到数据库
+    job-store-type: jdbc
+    # 程序结束时会等待quartz相关的内容结束
+    wait-for-jobs-to-complete-on-shutdown: true
+    # QuartzScheduler启动时更新己存在的Job,不用每次修改targetObject后删除qrtz_job_details表对应记录
+    overwrite-existing-jobs: true
+    jdbc:
+      # 配置是否每次重启项目都自动生成Quartz表结构，第一次启动项目时可使用always
+      initialize-schema: never
+      # schema: "classpath: quartz.sql"
+    properties:
+      org:
+        quartz:
+          # scheduler相关
+          scheduler:
+            # scheduler的实例名  @Autowired注入
+            instanceName: scheduler
+            instanceId: AUTO
+          # 持久化相关
+          jobStore:
+            dataSource: qzDS
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            # 表示数据库中相关表是QRTZ_开头的
+            tablePrefix: QRTZ_
+            # 不使用properties加载 使用yml配置
+            useProperties: false
+          # 线程池相关
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            # 线程数
+            threadCount: 10
+            # 线程优先级
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+        dataSource:
+          qzDS:
+            driver: com.mysql.jdbc.Driver
+            url: jdbc:mysql://p2wan.fun:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+            user: root
+            password: 123456

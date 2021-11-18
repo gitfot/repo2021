@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fun.ds.mapper.SalesMapper">
+
+    <resultMap type="com.fun.ds.entity.Sales" id="salesMap">
+        <result property="year" column="year"/>
+        <result property="season" column="season"/>
+        <result property="sale" column="sale"/>
+    </resultMap>
+
+    <select id="selectSalesPage" resultMap="salesMap">
+        SELECT *
+        FROM sales ${ew.customSqlSegment}
+    </select>
+
+    <bean id="accountService" class="com.foo.DefaultAccountService" scope="prototype"/>
+
+    <!-- the following is equivalent too (and preserved for backward compatibility) -->
+    <bean id="accountService" class="com.foo.DefaultAccountService" singleton="false"/>
+
+</mapper>
