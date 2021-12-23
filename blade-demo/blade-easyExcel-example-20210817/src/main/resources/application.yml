@@ -1,4 +1,11 @@
 server:
   port: 8082
 
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://p2wan.fun:3306/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
 

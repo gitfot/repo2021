@@ -2,7 +2,6 @@ package com.fun.common.utils.utils;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.http.*;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -28,7 +27,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -92,10 +90,6 @@ public class HttpClientUtils {
 		return post(url, params, utf8, header);
 	}
 
-	public static String postJSON(String url, Map<String, String> params, Map<String, String> header) throws IOException, URISyntaxException {
-		return postJSON(url, params, utf8, header);
-	}
-
 	/**
 	 * 简单post调用
 	 */
@@ -113,6 +107,13 @@ public class HttpClientUtils {
 		}
 
 		return null;
+	}
+
+	/**
+	 * post调用-json参数
+	 */
+	public static String postJSON(String url, Map<String, String> params, Map<String, String> header) throws IOException, URISyntaxException {
+		return postJSON(url, params, utf8, header);
 	}
 
 	public static String postJSON(String url, Map params, String charset, Map<String, String> header)
@@ -314,7 +315,7 @@ public class HttpClientUtils {
 		}
 	}
 
-	public static void main(String[] args) throws ClientProtocolException, IOException, URISyntaxException {
+	/*public static void main(String[] args) throws ClientProtocolException, IOException, URISyntaxException {
 		System.out.println(get("http://www.baidu.com", new HashMap<String, String>(), null));
-	}
+	}*/
 }
