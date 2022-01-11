@@ -1,9 +1,7 @@
 package com.fun.common.utils.utils;
 
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItem;
-import org.apache.commons.io.FileUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,31 +66,6 @@ public class FileTransferUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 			logger.info("文件下载失败...");
-			return false;
-		}
-	}
-
-	/**
-	 * 将base64编码保存为图片
-	 * 		图片的格式为 data:image/png;base64,iVBORw0KGgo...
-	 * 			逗号的前面为图片的格式，逗号后们为图片二进制数据的 Base64 编码字符串
-	 */
-	public static Boolean uploadBase64SignImage(String base64Str, String targetDir, String fileName) {
-		//解析出图片到项目目录
-		File file = new File(targetDir);
-		if (!file.exists()) {
-			file.mkdirs();
-		}
-
-		int commaIndex = base64Str.indexOf(",");
-		String extension = base64Str.substring(0, commaIndex).replaceAll("data:image/(.+);base64", "$1");
-		byte[] content = Base64.decodeBase64(base64Str.substring(commaIndex));
-
-		try {
-			FileUtils.writeByteArrayToFile(new File(targetDir, fileName +"."+extension), content);
-			return true;
-		} catch (IOException e) {
-			e.printStackTrace();
 			return false;
 		}
 	}

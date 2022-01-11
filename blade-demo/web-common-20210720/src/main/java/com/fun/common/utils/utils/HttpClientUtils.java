@@ -1,6 +1,7 @@
 package com.fun.common.utils.utils;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
@@ -110,10 +111,33 @@ public class HttpClientUtils {
 	}
 
 	/**
-	 * post调用-json参数
+	 * post调用-json参数-map参数
 	 */
 	public static String postJSON(String url, Map<String, String> params, Map<String, String> header) throws IOException, URISyntaxException {
 		return postJSON(url, params, utf8, header);
+	}
+
+	/**
+	 * post调用-json参数-String参数
+	 */
+	public static String postJSON(String url, String jsonString, Map<String, String> header) throws IOException, URISyntaxException {
+		return postJSON(url, jsonString, utf8, header);
+	}
+
+	public static String postJSON(String url, String jsonString, String charset, Map<String, String> header)
+		throws URISyntaxException, IOException {
+
+		HttpClient client = buildHttpClient(true);
+		HttpPost postMethod = buildHttpJSONPost(url, jsonString, charset);
+		setHeader(postMethod, header);
+		HttpResponse response = client.execute(postMethod);
+		assertStatus(response);
+		HttpEntity entity = response.getEntity();
+		if (entity != null) {
+			return EntityUtils.toString(entity, charset);
+		}
+
+		return null;
 	}
 
 	public static String postJSON(String url, Map params, String charset, Map<String, String> header)
@@ -183,6 +207,19 @@ public class HttpClientUtils {
 			String json = JSON.toJSONString(params);
 			System.out.println(json);
 			StringEntity stringEntity = new StringEntity(json, utf8);
+			stringEntity.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, application_json));
+			post.setEntity(stringEntity);
+		}
+		return post;
+	}
+
+	public static HttpPost buildHttpJSONPost(String url, String jsonString, String charset)
+		throws UnsupportedEncodingException, URISyntaxException {
+		Assert.notNull(url, "构建HttpPost时,url不能为null");
+		HttpPost post = new HttpPost(url);
+		setJSONHttpMethod(post);
+		if (!StringUtils.isBlank(jsonString)) {
+			StringEntity stringEntity = new StringEntity(jsonString, utf8);
 			stringEntity.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, application_json));
 			post.setEntity(stringEntity);
 		}
