@@ -33,6 +33,7 @@
         <module>blade-auth2-parent-example-20210924</module>
         <module>blade-dynamic-atasource-example-20211018</module>
         <module>blade-flash-sale-example-20211024</module>
+        <module>blade-spring-cache-example-20211226</module>
     </modules>
 
     <properties>
