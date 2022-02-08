@@ -3,7 +3,7 @@ package com.auth.server.controller;
 import cn.hutool.core.util.RandomUtil;
 import com.auth.server.constant.AuthConstants;
 import com.auth.server.domain.dto.Oauth2TokenDto;
-import com.fun.common.utils.api.R;
+import com.fun.core.api.R;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -40,6 +40,10 @@ import java.util.Optional;
 @NoArgsConstructor
 public class R<T> implements Serializable {
 
+	public static void main(String[] args) {
+
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@ApiModelProperty(value = "状态码", required = true)
