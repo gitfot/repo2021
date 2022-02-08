@@ -1,6 +1,6 @@
 package org.springblade.cache.controller;
 
-import com.fun.common.utils.api.R;
+import com.fun.core.api.R;
 import lombok.RequiredArgsConstructor;
 import org.springblade.cache.entity.UserInfo;
 import org.springblade.cache.service.CaffeineCacheServiceImpl;
@@ -53,6 +53,4 @@ public class GenericController {
 			.map(String::toUpperCase)
 			.orElse(null);
 	}
-
-
 }

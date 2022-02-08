@@ -1,0 +1,17 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Jan 06 10:09:35 CST 2022
+http\://nexus.bladex.vip/repository/maven-releases/.lastUpdated=1641434824505
+https\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1641434673840
+373de8adc37568db9ec991bbd1b5bea4f53cee49@default-feinno_snapshots-http\://10.10.202.230\:8081/repository/maven-snapshots/.lastUpdated=1641434824160
+http\://124.42.103.231\:15672/repository/caiyin-center/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:unknown from/to maven-central (http\://124.42.103.231\:15672/repository/caiyin-center/)\: Connect to 124.42.103.231\:15672 [/124.42.103.231] failed\: Operation timed out (Connection timed out)
+http\://124.42.103.231\:15672/repository/caiyin/.error=
+http\://124.42.103.231\:15672/repository/caiyin/.lastUpdated=1596693842762
+373de8adc37568db9ec991bbd1b5bea4f53cee49@default-feinno_releases-http\://10.10.202.230\:8081/repository/maven-releases/.lastUpdated=1641434748912
+https\://maven.aliyun.com/nexus/content/groups/public/.error=
+http\://10.10.202.230\:8081/repository/maven-releases/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:unknown from/to feinno_releases (http\://10.10.202.230\:8081/repository/maven-releases/)\: Connect to 10.10.202.230\:8081 [/10.10.202.230] failed\: Operation timed out (Connection timed out)
+@default-feinno-snapshots-http\://10.10.202.230\:8081/repository/maven-snapshots/.lastUpdated=1596693761061
+@default-3rd_part-http\://10.2.37.51\:8081/repository/3rd_part/.lastUpdated=1641434899873
+http\://nexus.bladex.vip/repository/maven-releases/.error=
+@default-maven-central-http\://124.42.103.231\:15672/repository/caiyin-center/.lastUpdated=1641434975090
+http\://10.2.37.51\:8081/repository/3rd_part/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:unknown from/to 3rd_part (http\://10.2.37.51\:8081/repository/3rd_part/)\: Connect to 10.2.37.51\:8081 [/10.2.37.51] failed\: Operation timed out (Connection timed out)
+http\://10.10.202.230\:8081/repository/maven-snapshots/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:unknown from/to feinno_snapshots (http\://10.10.202.230\:8081/repository/maven-snapshots/)\: Connect to 10.10.202.230\:8081 [/10.10.202.230] failed\: Operation timed out (Connection timed out)

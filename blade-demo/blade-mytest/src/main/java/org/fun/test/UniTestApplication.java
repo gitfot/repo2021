@@ -1,8 +1,8 @@
 package org.fun.test;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @author zz
@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 //@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @SpringBootApplication
-@MapperScan({"org.fun.test.handset","org.fun.test.order"})
+@EnableAsync
 public class UniTestApplication {
 
 	public static void main(String[] args) {

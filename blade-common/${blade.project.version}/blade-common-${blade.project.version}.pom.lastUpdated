@@ -1,0 +1,14 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Aug 11 18:45:14 CST 2020
+http\://nexus.bladex.vip/repository/maven-releases/.lastUpdated=1597142713898
+http\://10.10.202.230\:8081/repository/maven-releases/.error=
+http\://nexus.bladex.vip/repository/maven-releases/.error=
+https\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1597142713115
+http\://124.42.103.231\:15672/repository/caiyin/.lastUpdated=1597142710459
+http\://10.10.202.230\:8081/repository/maven-snapshots/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:${blade.project.version} from/to feinno_snapshots (http\://10.10.202.230\:8081/repository/maven-snapshots/)\: Transfer failed for http\://10.10.202.230\:8081/repository/maven-snapshots/org/springblade/blade-common/$%257Bblade.project.version%257D/blade-common-$%257Bblade.project.version%257D.pom 400 Repository version policy\: SNAPSHOT does not allow version\: $%7Bblade.project.version%7D
+https\://maven.aliyun.com/nexus/content/groups/public/.error=
+http\://124.42.103.231\:15672/repository/caiyin/.error=
+373de8adc37568db9ec991bbd1b5bea4f53cee49@default-feinno_snapshots-http\://10.10.202.230\:8081/repository/maven-snapshots/.lastUpdated=1597142713590
+http\://124.42.103.231\:15672/repository/caiyin-center/.error=
+http\://124.42.103.231\:15672/repository/caiyin-center/.lastUpdated=1597142714051
+http\://10.10.202.230\:8081/repository/maven-releases/.lastUpdated=1597142713414

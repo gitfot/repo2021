@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Aug 11 18:06:22 CST 2020
+https\://maven.aliyun.com/nexus/content/groups/public/.error=
+http\://124.42.103.231\:15672/repository/caiyin/.error=
+http\://124.42.103.231\:15672/repository/caiyin/.lastUpdated=1597140379483
+https\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1597140381957
+http\://10.10.202.230\:8081/repository/maven-releases/.lastUpdated=1597140382246

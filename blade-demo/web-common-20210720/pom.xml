@@ -14,7 +14,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring.boot.version>2.4.1</spring.boot.version>
+        <spring.boot.version>2.4.0</spring.boot.version>
         <docker.plugin.version>1.2.0</docker.plugin.version>
     </properties>
 
@@ -23,6 +23,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,17 +58,6 @@
             <artifactId>guava</artifactId>
             <version>30.1.1-jre</version>
         </dependency>
-        <!--引入swagger-->
-        <!--<dependency> 注意不要和knife4j同时引入，会冲突
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>-->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>3.0.2</version>
-        </dependency>
         <!--参数校验-->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -92,7 +82,6 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.10</version>
         </dependency>
-
         <!--文件操作相关库-->
         <dependency>
             <groupId>commons-io</groupId>
@@ -112,7 +101,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.version}</version>
+                <version>2.4.1</version>
                 <configuration>
                     <skip>true</skip>
                     <finalName>${project.name}</finalName>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.springblade</groupId>
+  <artifactId>blade-common</artifactId>
+  <versioning>
+    <release>2.5.1.RELEASE</release>
+    <versions>
+      <version>2.5.1.RELEASE</version>
+      <version>2.5.1.RELEASE-fad</version>
+      <version>2.5.1.RELEASE-ssp</version>
+    </versions>
+    <lastUpdated>20210204082105</lastUpdated>
+  </versioning>
+</metadata>

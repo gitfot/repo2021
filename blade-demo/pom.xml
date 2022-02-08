@@ -34,6 +34,11 @@
         <module>blade-dynamic-atasource-example-20211018</module>
         <module>blade-flash-sale-example-20211024</module>
         <module>blade-spring-cache-example-20211226</module>
+        <module>redis-distributed-lock-example-20220112</module>
+        <module>blade-Thread-example-20220113</module>
+        <module>blade-redisson-example-20220119</module>
+        <module>micro-swagger-parent-20220131</module>
+        <module>web-core-tool</module>
     </modules>
 
     <properties>

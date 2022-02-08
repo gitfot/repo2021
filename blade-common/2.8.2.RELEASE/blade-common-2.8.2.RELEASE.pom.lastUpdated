@@ -1,0 +1,14 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jan 05 19:08:52 CST 2022
+http\://nexus.bladex.vip/repository/maven-releases/.lastUpdated=1641365414844
+https\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1641365263847
+373de8adc37568db9ec991bbd1b5bea4f53cee49@default-feinno_snapshots-http\://10.10.202.230\:8081/repository/maven-snapshots/.lastUpdated=1641380781644
+http\://124.42.103.231\:15672/repository/caiyin-center/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:2.8.2.RELEASE from/to maven-central (http\://124.42.103.231\:15672/repository/caiyin-center/)\: Connect to 124.42.103.231\:15672 [/124.42.103.231] failed\: Operation timed out (Connection timed out)
+373de8adc37568db9ec991bbd1b5bea4f53cee49@default-feinno_releases-http\://10.10.202.230\:8081/repository/maven-releases/.lastUpdated=1641380706140
+https\://maven.aliyun.com/nexus/content/groups/public/.error=
+http\://10.10.202.230\:8081/repository/maven-releases/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:2.8.2.RELEASE from/to feinno_releases (http\://10.10.202.230\:8081/repository/maven-releases/)\: Connect to 10.10.202.230\:8081 [/10.10.202.230] failed\: Operation timed out (Connection timed out)
+@default-3rd_part-http\://10.2.37.51\:8081/repository/3rd_part/.lastUpdated=1641380856852
+http\://nexus.bladex.vip/repository/maven-releases/.error=
+@default-maven-central-http\://124.42.103.231\:15672/repository/caiyin-center/.lastUpdated=1641380932248
+http\://10.2.37.51\:8081/repository/3rd_part/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:2.8.2.RELEASE from/to 3rd_part (http\://10.2.37.51\:8081/repository/3rd_part/)\: Connect to 10.2.37.51\:8081 [/10.2.37.51] failed\: Operation timed out (Connection timed out)
+http\://10.10.202.230\:8081/repository/maven-snapshots/.error=Could not transfer artifact org.springblade\:blade-common\:pom\:2.8.2.RELEASE from/to feinno_snapshots (http\://10.10.202.230\:8081/repository/maven-snapshots/)\: Connect to 10.10.202.230\:8081 [/10.10.202.230] failed\: Operation timed out (Connection timed out)
