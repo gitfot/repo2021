@@ -266,12 +266,8 @@ public class HttpClientUtil {
 	static void assertStatus(HttpResponse res) throws IOException {
 		Assert.notNull(res, "http响应对象为null");
 		Assert.notNull(res.getStatusLine(), "http响应对象的状态为null");
-		switch (res.getStatusLine().getStatusCode()) {
-			case HttpStatus.SC_OK:
-				break;
-			default:
-				throw new IOException("服务器响应状态异常,失败.");
+		if (res.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
+			throw new IOException("服务器响应状态异常,失败.");
 		}
 	}
-
 }
