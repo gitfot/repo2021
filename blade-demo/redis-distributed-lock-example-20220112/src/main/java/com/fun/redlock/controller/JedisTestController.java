@@ -1,7 +1,7 @@
-package com.fun.redlock.jedis.controller;
+package com.fun.redlock.controller;
 
-import com.fun.redlock.jedis.annotation.JLock;
-import com.fun.redlock.jedis.service.JedisLockService;
+import com.fun.redlock.annotation.JLock;
+import com.fun.redlock.service.JedisLockService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

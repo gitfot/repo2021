@@ -1,6 +1,7 @@
 package com.fun.redlock.util;
 
 import cn.hutool.core.bean.BeanUtil;
+import com.google.common.collect.Lists;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.*;
@@ -87,9 +88,39 @@ public class RedisUtil<T> {
 	/**
 	 * 查询缓存 key 是否存在
 	 */
-	public boolean containsKey(String key) {
+	public boolean hasKey(String key) {
 		try {
 			return redisTemplate.hasKey(key);
+		} catch (Throwable e) {
+			log.error("判断缓存存在失败key:[" + key + "],错误信息 [{}]", e);
+		}
+		return false;
+	}
+
+	/**
+	 * 判断hash表中是否有该项的值
+	 * @param key 键 不能为null
+	 * @param item 项 不能为null
+	 * @return true 存在 false不存在
+	 */
+	public boolean hHasKey(String key, String item) {
+		try {
+			return redisTemplate.opsForHash().hasKey(key, item);
+		} catch (Throwable e) {
+			log.error("判断缓存存在失败key:[" + key + "],错误信息 [{}]", e);
+		}
+		return false;
+	}
+
+	/**
+	 * 根据value从一个set中查询,是否存在
+	 * @param key 键
+	 * @param value 值
+	 * @return true 存在 false不存在
+	 */
+	public boolean sHasKey(String key, Object value) {
+		try {
+			return redisTemplate.opsForSet().isMember(key, value);
 		} catch (Throwable e) {
 			log.error("判断缓存存在失败key:[" + key + "],错误信息 [{}]", e);
 		}
@@ -389,7 +420,6 @@ public class RedisUtil<T> {
 		return null;
 	}
 
-
 	/**
 	 * 根据 key 获取总条数 用于分页
 	 *
@@ -423,6 +453,19 @@ public class RedisUtil<T> {
 		return 0;
 	}
 
+	/**
+	 * 获取set缓存的长度
+	 * @param key 键
+	 */
+	public long getSetSize(String key) {
+		try {
+			return redisTemplate.opsForSet().size(key);
+		} catch (Throwable e) {
+			log.error("获取list长度失败key[" + key + "],[" + e + "]");
+		}
+		return 0;
+	}
+
 
 	/**
 	 * 根据 key 移除 list 缓存
@@ -438,48 +481,73 @@ public class RedisUtil<T> {
 		return false;
 	}
 
-
 	/**
-	 * 根据 key 移除 value 缓存
+	 * 删除多个缓存
 	 */
-	public boolean removeValue(String key) {
-		return remove(key);
+	public boolean del(String... key) {
+		if (key != null && key.length > 0) {
+			try {
+				if (key.length == 1) {
+					redisTemplate.delete(key[0]);
+				} else {
+					redisTemplate.delete(Lists.newArrayList(key));
+				}
+				return true;
+			} catch (Throwable e) {
+				log.error("移除缓存失败 key:[{}] 失败原因 [{}]", key, e);
+			}
+		}
+		return false;
 	}
 
-
 	/**
-	 * 根据 key 移除 set 缓存
+	 * 删除hash表中的值
+	 * @param key 键 不能为null
+	 * @param item 项 可以使多个 不能为null
 	 */
-	public boolean removeSet(String key) {
-		return remove(key);
+	public void hdel(String key, Object... item) {
+		try {
+			redisTemplate.opsForHash().delete(key, item);
+		} catch (Throwable e) {
+			log.error("移除缓存失败 key:[{}] 失败原因 [{}]", key, e);
+		}
 	}
 
-
 	/**
-	 * 根据 key 移除 list 缓存
+	 * 移除值为value的
+	 * @param key 键
+	 * @param values 值 可以是多个
+	 * @return 移除的个数
 	 */
-	public boolean removeList(String key) {
-		return remove(key);
+	public long sdel(String key, Object... values) {
+		try {
+			Long count = redisTemplate.opsForSet().remove(key, values);
+			return count;
+		} catch (Throwable e) {
+			log.error("移除缓存失败 key:[{}] 失败原因 [{}]", key, e);
+		}
+		return 0;
 	}
 
 	/**
 	 * 根据 key 自增value
 	 */
 	public Long incr(String key, long delta) {
+		if (delta < 0) {
+			throw new RuntimeException("递增因子必须大于0!");
+		}
 		return redisTemplate.opsForValue().increment(key, delta);
 	}
 
-
 	/**
-	 * 移除缓存
+	 * 递减
+	 * @param key 键
+	 * @param delta 要减少几(小于)
 	 */
-	private boolean remove(String key) {
-		try {
-			redisTemplate.delete(key);
-			return true;
-		} catch (Throwable e) {
-			log.error("移除缓存失败 key:[{}] 失败原因 [{}]", key, e);
+	public long decr(String key, long delta) {
+		if (delta < 0) {
+			throw new RuntimeException("递减因子必须大于0!");
 		}
-		return false;
+		return redisTemplate.opsForValue().increment(key, -delta);
 	}
 }

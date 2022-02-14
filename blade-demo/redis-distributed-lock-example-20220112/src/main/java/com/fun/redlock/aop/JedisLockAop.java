@@ -1,6 +1,6 @@
-package com.fun.redlock.jedis.aop;
+package com.fun.redlock.aop;
 
-import com.fun.redlock.jedis.annotation.JLock;
+import com.fun.redlock.annotation.JLock;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;

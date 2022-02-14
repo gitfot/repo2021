@@ -1,4 +1,4 @@
-package com.fun.redlock.jedis.annotation;
+package com.fun.redlock.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

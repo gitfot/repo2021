@@ -1,4 +1,4 @@
-package com.fun.redlock.jedis.config;
+package com.fun.redlock.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -40,21 +40,4 @@ public class RedisConfig extends CachingConfigurerSupport {
 		template.afterPropertiesSet();
 		return template;
 	}
-
-
-	/*@Bean
-	public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory factory) {
-		RedisTemplate<Object, Object> template = new RedisTemplate<>();
-		//使用String序列化方式序列化key
-		template.setKeySerializer(RedisSerializer.string());
-		//使用JSON序列化方式序列化value
-		template.setValueSerializer(RedisSerializer.json());
-		//设置"hash的Key"的序列化方式
-		//template.setHashKeySerializer(RedisSerializer.string());
-		//设置"hash"类型的数据的序列化方式
-		//template.setHashValueSerializer(RedisSerializer.json());
-		//设置模板工厂对象
-		template.setConnectionFactory(factory);
-		return template;
-	}*/
 }

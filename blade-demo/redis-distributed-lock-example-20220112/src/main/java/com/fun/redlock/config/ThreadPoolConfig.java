@@ -1,4 +1,4 @@
-package com.fun.redlock.jedis.config;
+package com.fun.redlock.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

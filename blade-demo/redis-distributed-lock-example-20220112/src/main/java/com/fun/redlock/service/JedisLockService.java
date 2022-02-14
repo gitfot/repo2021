@@ -1,7 +1,7 @@
-package com.fun.redlock.jedis.service;
+package com.fun.redlock.service;
 
-import com.fun.redlock.jedis.annotation.JLock;
-import com.fun.redlock.jedis.tool.JedisTool;
+import com.fun.redlock.annotation.JLock;
+import com.fun.redlock.util.JedisTool;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

@@ -1,4 +1,4 @@
-package com.fun.redlock.jedis.tool;
+package com.fun.redlock.util;
 
 import cn.hutool.extra.spring.SpringUtil;
 import lombok.extern.slf4j.Slf4j;
