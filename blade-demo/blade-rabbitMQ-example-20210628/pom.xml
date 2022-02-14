@@ -10,29 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>blade-rabbitMQ-example-20210628</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>rabbitMQ-producer-202201213</module>
+        <module>rabbitMQ-comsumer-20220213</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springblade</groupId>
-            <artifactId>blade-core-boot</artifactId>
-            <version>${blade.tool.version}</version>
-        </dependency>
-        <!-- 实现对 RabbitMQ 的自动化配置 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.4.1</version>
-            <scope>compile</scope>
-        </dependency>
-
-    </dependencies>
 </project>
