@@ -1,4 +1,4 @@
-package org.springblade.mq.constant;
+package com.fun.pro.constant;
 
 /**
  * 定义队列、交换机、routingKey等常量

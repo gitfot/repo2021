@@ -1,8 +1,6 @@
-package org.springblade.mq.config;
+package com.fun.pro.config;
 
-import org.springblade.mq.constant.RabbitMqKey;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.fun.pro.constant.RabbitMqKey;
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -12,28 +10,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * rabbitMQ配置类
+ * rabbitMQ 交换机与队列相关配置
  * @author zz
  * @date 2021/6/4
  */
 @Component
-public class TradeOrderQueueConfig {
-
-	private final static Logger logger = LoggerFactory.getLogger(TradeOrderQueueConfig.class);
+public class ExchangeQueueConfig {
 
 	/**
 	 * 创建队列
 	 * Queue 可以有4个参数
 	 * String name: 队列名
 	 * boolean durable: 持久化消息队列，rabbitmq 重启的时候不需要创建新的队列，默认为 true
-	 * boolean exclusive: 表示该消息队列是否只在当前的connection生效，默认为 false
-	 * boolean autoDelete: 表示消息队列在没有使用时将自动被删除，默认为 false
+	 * boolean exclusive: 表示该消息队列是否只在当前的connection生效，当连接关闭后队列即被删除。此参考优先级高于durable。默认为 false
+	 * boolean autoDelete: 是否自动删除，当没有生产者或者消费者使用此队列，该队列会自动删除。默认为 false
 	 * Map<String, Object> arguments:
 	 */
 	@Bean(name = "generalQueue")
 	public Queue queue() {
-		logger.info("queue : {}", RabbitMqKey.GENERAL_QUEUE);
-		// 队列持久化
+		//一般设置一下队列的持久化就好,其余两个就是默认false
 		return new Queue(RabbitMqKey.GENERAL_QUEUE, true);
 	}
 
@@ -48,7 +43,7 @@ public class TradeOrderQueueConfig {
 	 */
 	@Bean(name = "fanoutExchange")
 	public FanoutExchange fanoutExchange() {
-		logger.info("exchange : {}", RabbitMqKey.FANOUT_EXCHANGE);
+		//创建交换机时，可选持久化和是否自动删除，默认为false即可
 		return new FanoutExchange(RabbitMqKey.FANOUT_EXCHANGE);
 	}
 
@@ -64,16 +59,30 @@ public class TradeOrderQueueConfig {
 
 	/*===================DIRECT MODE=======================*/
 
-	@Bean
+	/**
+	 * 创建队列
+	 * Queue 可以有4个参数
+	 * String name: 队列名
+	 * boolean durable: 持久化消息队列，rabbitmq 重启的时候不需要创建新的队列，默认为 true
+	 * boolean exclusive: 表示该消息队列是否只在当前的connection生效，当连接关闭后队列即被删除。此参考优先级高于durable。默认为 false
+	 * boolean autoDelete: 是否自动删除，当没有生产者或者消费者使用此队列，该队列会自动删除。默认为 false
+	 * Map<String, Object> arguments:
+	 */
+	@Bean(name = "directQueue")
 	public Queue directQueue() {
-		logger.info("queue : {}", RabbitMqKey.TRADE_DIRECT_QUEUE);
-		// 队列持久化
-		return new Queue(RabbitMqKey.TRADE_DIRECT_QUEUE, true);
+		Map<String, Object> params = new HashMap<>(3);
+		// x-dead-letter-exchange 声明了当前队列绑定的死信交换机
+		params.put("x-dead-letter-exchange", RabbitMqKey.TRADE_DEAD_LETTER_EXCHANGE);
+		// x-dead-letter-routing-key 声明了这些死信在转发时携带的 routing-key 名称。
+		params.put("x-dead-letter-routing-key", RabbitMqKey.DEAD_LETTER_ROUTING_KEY);
+		// x-message-ttl 队列过期时间（20s）
+		params.put("x-message-ttl", 20000);
+//		return QueueBuilder.durable(RabbitMqKey.TRADE_DIRECT_QUEUE).withArguments(params).build();
+		return new Queue(RabbitMqKey.TRADE_DIRECT_QUEUE, true, false, false, params);
 	}
 
-	@Bean
+	@Bean(name = "directExchange")
 	public DirectExchange directExchange() {
-		logger.info("exchange : {}", RabbitMqKey.TRADE_DIRECT_EXCHANGE);
 		return new DirectExchange(RabbitMqKey.TRADE_DIRECT_EXCHANGE);
 	}
 
@@ -87,14 +96,13 @@ public class TradeOrderQueueConfig {
 
 	@Bean
 	public Queue topicQueue() {
-		logger.info("queue : {}", RabbitMqKey.TRADE_TOPIC_QUEUE);
 		// 队列持久化
 		return new Queue(RabbitMqKey.TRADE_TOPIC_QUEUE, true);
 	}
 
 	@Bean
 	public TopicExchange topicExchange() {
-		logger.info("exchange : {}", RabbitMqKey.TRADE_TOPIC_EXCHANGE);
+		//创建交换机时，可选持久化和是否自动删除，默认为false即可
 		return new TopicExchange(RabbitMqKey.TRADE_TOPIC_EXCHANGE);
 	}
 
@@ -148,6 +156,7 @@ public class TradeOrderQueueConfig {
 	 **/
 	@Bean(name = "deadLetterTopicExchange")
 	public TopicExchange deadLetterTopicExchange() {
+		//创建交换机时，可选持久化和是否自动删除，默认为false即可
 		return new TopicExchange(RabbitMqKey.TRADE_DEAD_LETTER_EXCHANGE);
 	}
 
