@@ -15,9 +15,9 @@ spring:
         max-wait: -1 # 连接池最大阻塞等待时间，单位：毫秒。默认为 -1 ，表示不限制。
 
   datasource:
-    url: jdbc:mysql://192.168.5.92:3306/mishopboss3?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://p2wan.fun:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: my@2019!
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       #连接池名

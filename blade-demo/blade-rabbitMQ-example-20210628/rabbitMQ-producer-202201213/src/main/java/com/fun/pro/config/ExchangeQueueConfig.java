@@ -4,7 +4,6 @@ import com.fun.pro.constant.RabbitMqKey;
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +13,7 @@ import java.util.Map;
  * @author zz
  * @date 2021/6/4
  */
-@Component
+//@Configuration
 public class ExchangeQueueConfig {
 
 	/**

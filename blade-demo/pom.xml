@@ -39,6 +39,7 @@
         <module>blade-redisson-example-20220119</module>
         <module>micro-swagger-parent-20220131</module>
         <module>web-core-tool</module>
+        <module>wan-canal-service-example-20220216</module>
     </modules>
 
     <properties>
