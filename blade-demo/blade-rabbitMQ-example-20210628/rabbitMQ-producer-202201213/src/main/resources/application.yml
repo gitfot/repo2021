@@ -15,9 +15,12 @@ spring:
     username: test
     password: test098
     virtual-host: /test
-    # 确认消息发送到交换机上 --开启回调
+    # 开启消息二次确认,生产者到broker的交换机
     publisher-confirm-type: correlated
-    # 确认消息已发送到队列 --开启回调
+    #开启消息二次确认，交换机到队列的可靠性投递，开启returnCallback配置
     publisher-returns: true
+    #为true,则交换机处理消息到路由失败，则会返回给生产者
+    template:
+      mandatory: true
 
 

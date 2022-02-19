@@ -43,6 +43,9 @@ public class OrderQueueListener {
 		try {
 			boolean hasKey = redisUtil.hasKey(MESSAGE_KEY_PREFIX + messageId);
 			if (hasKey) {
+				//1、messageId重复进来后需要进一步检查是否已对该message正确处理
+				//1.1、如果正确处理则ack
+				//1.2 否则再处理一次
 				channel.basicAck(deliveryTag,false);
 				logger.info("MESSAGE REPEAT --- messageId:{}, message{}", messageId, jsonObject);
 				return;
