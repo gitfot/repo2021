@@ -49,11 +49,6 @@
             <artifactId>xk-time</artifactId>
             <version>2.1.2</version>
         </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.7.3</version>
-        </dependency>
         <!-- 添加 google 提供的二维码依赖 -->
         <dependency>
             <groupId>com.google.zxing</groupId>

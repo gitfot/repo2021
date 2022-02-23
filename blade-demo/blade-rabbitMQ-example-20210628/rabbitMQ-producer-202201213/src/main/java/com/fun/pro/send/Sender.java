@@ -3,11 +3,11 @@ package com.fun.pro.send;
 import cn.hutool.core.lang.UUID;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fun.pro.constant.RabbitMqKey;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.fun.pro.constant.RabbitMqKey;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageDeliveryMode;
 import org.springframework.amqp.core.MessagePostProcessor;
@@ -120,7 +120,7 @@ public class Sender {
 		 * messagePostProcessor: 消息属性处理类
 		 * correlationData: 对象内部只有一个 id 属性，用来表示当前消息唯一性
 		 */
-		rabbitTemplate.convertAndSend(exchange, routingKey, message, messagePostProcessor, correlationData);
+		rabbitTemplate.convertAndSend("act-update-info-exchange", "act-update-info-key", message, messagePostProcessor, correlationData);
 		logger.info("SEND --- messageId：{}, payload:{}", finalUniqMessageId, json);
 		return finalUniqMessageId;
 	}

@@ -10,11 +10,16 @@ spring:
 
   # RabbitMQ 配置项，对应 RabbitProperties 配置类
   rabbitmq:
-    host: 39.108.62.171
+#    host: 39.108.62.171
+#    port: 5672
+#    username: test
+#    password: test098
+#    virtual-host: /test
+    host: 10.153.99.57
     port: 5672
-    username: test
-    password: test098
-    virtual-host: /test
+    username: admin
+    password: adin
+    virtual-host: rzocp
     # 开启消息二次确认,生产者到broker的交换机
     publisher-confirm-type: correlated
     #开启消息二次确认，交换机到队列的可靠性投递，开启returnCallback配置

@@ -83,11 +83,6 @@
             <version>${activiti.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.6</version>
-        </dependency>
-        <dependency>
             <groupId>org.springblade</groupId>
             <artifactId>web-common-20210720</artifactId>
             <version>3.0.0</version>
