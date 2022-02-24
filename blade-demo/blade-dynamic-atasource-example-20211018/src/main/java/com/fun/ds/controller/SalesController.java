@@ -1,7 +1,7 @@
 package com.fun.ds.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.fun.common.utils.api.R;
+import com.fun.core.api.R;
 import com.fun.ds.entity.Sales;
 import com.fun.ds.mapper.StockMapper;
 import com.fun.ds.service.SalesService;

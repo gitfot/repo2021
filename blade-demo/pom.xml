@@ -48,6 +48,7 @@
         <spring.cloud.version>2020.0.0</spring.cloud.version>
         <swagger.annotation.version>1.5.20</swagger.annotation.version>
         <springfox.version>2.10.5</springfox.version>
+        <knife4j.version>2.0.8</knife4j.version>
         <httpclient.version>4.5.10</httpclient.version>
         <fastjson.version>1.2.76</fastjson.version>
         <lombok.version>1.18.20</lombok.version>
@@ -87,6 +88,11 @@
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
                 <version>${swagger.annotation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-annotations</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>

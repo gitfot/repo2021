@@ -23,6 +23,11 @@
             <version>3.0.0</version>
         </dependency>
         <dependency>
+            <groupId>org.springblade</groupId>
+            <artifactId>web-core-tool</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
         </dependency>

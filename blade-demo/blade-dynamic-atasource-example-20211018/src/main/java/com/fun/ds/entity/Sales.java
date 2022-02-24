@@ -1,7 +1,6 @@
 package com.fun.ds.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fun.common.base.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -15,9 +14,9 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @TableName("sales")
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @ApiModel(value = "Sales对象", description = "对象")
-public class Sales extends BaseEntity {
+public class Sales {
 
 	private static final Long serialVersionId = 1L;
 
