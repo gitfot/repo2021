@@ -120,7 +120,7 @@ public class Sender {
 		 * messagePostProcessor: 消息属性处理类
 		 * correlationData: 对象内部只有一个 id 属性，用来表示当前消息唯一性
 		 */
-		rabbitTemplate.convertAndSend("act-update-info-exchange", "act-update-info-key", message, messagePostProcessor, correlationData);
+		rabbitTemplate.convertAndSend(exchange, routingKey, message, messagePostProcessor, correlationData);
 		logger.info("SEND --- messageId：{}, payload:{}", finalUniqMessageId, json);
 		return finalUniqMessageId;
 	}

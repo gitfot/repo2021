@@ -30,7 +30,7 @@ public class ThreadPoolConfig {
 	private String threadNamePrefix;
 
 	@Bean
-	public Executor MessageExecutor() {
+	public Executor messageExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 		executor.setCorePoolSize(corePoolSize);
 		executor.setMaxPoolSize(maxPoolSize);
