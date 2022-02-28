@@ -4,11 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.fun.pro.constant.RabbitMqKey;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -25,12 +21,12 @@ public class QueueListerTmp {
 	/**
 	 * 队列不存在则自动创建
 	 */
-//	@RabbitListener(queues = "canal_001_queue")
-	@RabbitListener(bindings = @QueueBinding(
+	/*@RabbitListener(bindings = @QueueBinding(
 		value = @Queue(value = "canal_001_queue", durable = "true", autoDelete = "false"),
 		exchange = @Exchange(value = "canal_001_exchange", type = ExchangeTypes.TOPIC),
 		key = "canal_001_routingKey"
-	))
+	))*/
+	@RabbitListener(queues = "canal_001_queue")
 	public void process1(Message message, Channel channel) throws IOException {
 		long deliveryTag = message.getMessageProperties().getDeliveryTag();
 		String messageId = message.getMessageProperties().getMessageId();

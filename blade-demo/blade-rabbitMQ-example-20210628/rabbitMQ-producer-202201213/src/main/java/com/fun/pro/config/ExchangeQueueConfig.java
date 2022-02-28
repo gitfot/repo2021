@@ -75,7 +75,7 @@ public class ExchangeQueueConfig {
 		// x-dead-letter-routing-key 声明了这些死信在转发时携带的 routing-key 名称。
 		params.put("x-dead-letter-routing-key", RabbitMqKey.DEAD_LETTER_ROUTING_KEY);
 		// x-message-ttl 队列过期时间（20s）
-		params.put("x-message-ttl", 20000);
+//		params.put("x-message-ttl", 20000);
 //		return QueueBuilder.durable(RabbitMqKey.TRADE_DIRECT_QUEUE).withArguments(params).build();
 		return new Queue(RabbitMqKey.TRADE_DIRECT_QUEUE, true, false, false, params);
 	}

@@ -67,7 +67,9 @@ public class OrderQueueListener {
 
 	/**
 	 * direct
-	 * 1、auto模式--会进行retry，最后一次会加入到死信队列
+	 * auto模式:
+	 * 1.配置retry--会进行retry，最后一次会加入到死信队列
+	 * 2.没配置retry--即使有死信也不会进，而是一直重复消费
 	 */
 	//@RabbitListener(queues = RabbitMqKey.TRADE_DIRECT_QUEUE)
 	public void process3(Message message) throws IOException {
