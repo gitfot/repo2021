@@ -39,6 +39,8 @@
         <module>micro-swagger-parent-20220131</module>
         <module>web-core-tool</module>
         <module>wan-canal-service-example-20220216</module>
+        <module>blade-algorithms-collection-20220301</module>
+        <module>blade-web-flux-example</module>
     </modules>
 
     <properties>

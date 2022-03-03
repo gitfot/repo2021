@@ -1,4 +1,4 @@
-package com.fun.thread;
+package com.fun.async;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

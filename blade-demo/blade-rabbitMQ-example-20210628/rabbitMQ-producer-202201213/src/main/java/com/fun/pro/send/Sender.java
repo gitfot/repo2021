@@ -44,7 +44,7 @@ public class Sender {
 	 * 直接发送到队列
 	 */
 	public String sendSimple(Object payload){
-		return baseSend("", RabbitMqKey.GENERAL_QUEUE, payload, null, 3600 * 10L);
+		return baseSend("", RabbitMqKey.GENERAL_QUEUE, payload, null, 3600 * 1000L);
 		//return baseSend("", RabbitMqKey.TRADE_DIRECT_QUEUE, payload, null, 3600 * 10L);
 	}
 
@@ -52,21 +52,21 @@ public class Sender {
 	 * direct模式发送至交换机
 	 */
 	public String sendDirect(Object payload) {
-		return baseSend(RabbitMqKey.TRADE_DIRECT_EXCHANGE, RabbitMqKey.DIRECT_ROUTING_KEY, payload, null, 3600 * 10L);
+		return baseSend(RabbitMqKey.TRADE_DIRECT_EXCHANGE, RabbitMqKey.DIRECT_ROUTING_KEY, payload, null, 3600 * 1000L);
 	}
 
 	/**
 	 * topic模式发送至交换机
 	 */
 	public String sendTopic(Object payload) {
-		return baseSend(RabbitMqKey.TRADE_TOPIC_EXCHANGE, RabbitMqKey.TOPIC_ROUTING_KEY, payload, null, 3600 * 10L);
+		return baseSend(RabbitMqKey.TRADE_TOPIC_EXCHANGE, RabbitMqKey.TOPIC_ROUTING_KEY, payload, null, 3600 * 100L);
 	}
 
 	/**
 	 * 发送至延时消息队列（direct）
 	 */
 	public String sendDelay(Object payload){
-		return baseSend(RabbitMqKey.TRADE_DELAY_EXCHANGE, RabbitMqKey.DELAY_ROUTING_KEY, payload, null, 3600 * 10L);
+		return baseSend(RabbitMqKey.TRADE_DELAY_EXCHANGE, RabbitMqKey.DELAY_ROUTING_KEY, payload, null, 3600 * 100L);
 	}
 
 	/**

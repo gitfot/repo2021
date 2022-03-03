@@ -20,6 +20,6 @@ public class TmpController {
 
 	@PostMapping("/send-topic")
 	public void test1() {
-		sender.baseSend("canal_001_exchange","canal_001_routingKey","123", null, 100000L);
+		sender.baseSend("canal_001_exchange","canal_001_routingKey","123", null, 3600*100L);
 	}
 }
