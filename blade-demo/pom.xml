@@ -40,7 +40,7 @@
         <module>web-core-tool</module>
         <module>wan-canal-service-example-20220216</module>
         <module>blade-algorithms-collection-20220301</module>
-        <module>blade-web-flux-example</module>
+        <module>blade-web-flux-example-20220306</module>
     </modules>
 
     <properties>
