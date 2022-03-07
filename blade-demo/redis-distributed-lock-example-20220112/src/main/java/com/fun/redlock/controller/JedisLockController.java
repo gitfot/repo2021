@@ -13,9 +13,9 @@ import java.util.concurrent.Executor;
  * @author wanwan 2022/1/13
  */
 @RestController
-@RequestMapping("/jedis")
+@RequestMapping("/lock")
 @RequiredArgsConstructor
-public class JedisTestController {
+public class JedisLockController {
 
 	private final Executor executor;
 	private final JedisLockService jedisLockService;

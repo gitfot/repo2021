@@ -23,7 +23,6 @@ public class RedisUtil<T> {
 
 	private final RedisTemplate<String, T> redisTemplate;
 
-
 	/**
 	 * 添加 key:string 缓存
 	 */
