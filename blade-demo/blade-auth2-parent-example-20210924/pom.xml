@@ -12,9 +12,9 @@
     <artifactId>blade-auth2-parent-example-20210924</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>blade-auth-server-example</module>
-        <module>blade-auth-resource-example</module>
-        <module>blade-gateway-example</module>
+        <module>auth-server-example</module>
+        <module>auth-resource-example</module>
+        <module>auth-gateway-example</module>
     </modules>
 
     <properties>
